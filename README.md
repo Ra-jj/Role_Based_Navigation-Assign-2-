@@ -1,5 +1,7 @@
 # Role-Based Navigation System
 
+![Demo](public/demo.png)
+
 This project is a frontend assignment demonstrating a **dynamic, permission-driven UI**. It showcases how to securely and reactively manage user access at both the route level (hiding entire pages/sidebar items) and the action level (hiding specific buttons like "Create" or "Delete").
 
 ## Overview
