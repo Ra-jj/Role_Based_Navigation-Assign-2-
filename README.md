@@ -49,3 +49,7 @@ The application features a modern B2B dashboard aesthetic. It uses a centralized
 4. **Test Route Guards:**
    - As **User B**, try manually typing `/billing` or `/reports` into your URL bar.
    - You will be gracefully redirected to the "403 - Not Authorized" page.
+5. **Test Empty State Edge Case:**
+   - Switch to **User C (No Access)** using the dropdown.
+   - The sidebar will cleanly render a "No modules available" placeholder.
+   - Because User C has zero module access, any attempt to navigate to a module route (like the default `/orders`) will immediately redirect them to the "403 - Not Authorized" page.
