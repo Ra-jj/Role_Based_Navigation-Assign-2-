@@ -2,11 +2,11 @@
 
 🔗 **[Live Demo](https://role-based-navigation-monodip.vercel.app/)**
 
-<div align="center" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-  <img src="public/demo.png" alt="Desktop Dashboard" width="45%">
-  <img src="public/demo-mobile.png" alt="Mobile Drawer" width="20%">
-  <img src="public/demo-403.png" alt="403 Route Guard" width="30%">
-</div>
+<p align="center">
+  <img src="public/demo.png" alt="Desktop Dashboard" width="42%">
+  <img src="public/demo-mobile.png" alt="Mobile Drawer" width="12%">
+  <img src="public/demo-403.png" alt="403 Route Guard" width="42%">
+</p>
 
 This project is a frontend assignment demonstrating a **dynamic, permission-driven UI**. It showcases how to securely and reactively manage user access at both the route level (hiding entire pages/sidebar items) and the action level (hiding specific buttons like "Create" or "Delete").
 
