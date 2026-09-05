@@ -13,7 +13,7 @@ export const PermissionProvider = ({ children }) => {
       (m) => m.name.toLowerCase() === moduleName.toLowerCase()
     );
     if (!targetModule) return false;
-    return targetModule.permission.includes(action);
+    return targetModule.permission?.includes(action) || false;
   };
 
   const setUser = (userKey) => {

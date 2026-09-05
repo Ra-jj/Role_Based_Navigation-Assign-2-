@@ -1,16 +1,51 @@
-# React + Vite
+# Role-Based Navigation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This project is a frontend assignment demonstrating a **dynamic, permission-driven UI**. It showcases how to securely and reactively manage user access at both the route level (hiding entire pages/sidebar items) and the action level (hiding specific buttons like "Create" or "Delete").
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application features a modern B2B dashboard aesthetic. It uses a centralized `PermissionContext` to handle authorization logic, ensuring a secure-by-default (default-deny) approach to UI rendering and routing.
 
-## React Compiler
+### Key Features
+- **Dynamic Sidebar:** Navigation links are generated based on the user's `VIEW` permissions. Shows a friendly empty state if no modules are available.
+- **Route Guards (`ProtectedRoute`):** Prevents unauthorized direct URL navigation by checking the current user's permissions and redirecting to a 403 page if necessary.
+- **Action-Level Checks:** Renders buttons (e.g., "Create Order", "Delete Report") *only* if the user has the specific action permission in their module configuration.
+- **Responsive Design:** The layout includes a collapsible off-canvas sidebar for mobile screens.
+- **Mock User Switcher:** Easily toggle between different user profiles to test authorization logic in real-time.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- **React (Vite):** Fast, modern frontend framework.
+- **React Router v6:** For routing and route guarding.
+- **Tailwind CSS v4:** Utility-first CSS framework for clean, responsive styling.
+- **Lucide React:** Beautiful, consistent icons.
 
-## Expanding the Oxlint configuration
+## Assumptions & Disclaimers
+- **Mock Data:** Permissions are defined in `src/data/mockUsers.js` to simulate an API response.
+- **Client-Side Only:** This project demonstrates client-side UI restrictions. In a real-world application, client-side authorization must *always* be backed by server-side validation (e.g., checking tokens/permissions on API endpoints), as client code can be bypassed.
+- **Permissions Shape:** We assume actions are represented as an array of strings like `["VIEW", "CREATE", "DELETE"]`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## How to Run Locally
+
+1. Clone or download the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the application in your browser (typically `http://localhost:5173`).
+
+## How to Test
+
+1. **User Switcher:** Use the dropdown in the top right corner to switch between **User A** and **User B**.
+2. **Observe the Sidebar:** 
+   - **User A** has access to Orders, Billing, and Reports.
+   - **User B** only has access to Orders. The other links disappear.
+3. **Observe Action Buttons:**
+   - Go to the **Orders** page as User A: The "Create Order" button is visible.
+   - Switch to User B: The "Create Order" button disappears (User B lacks the `CREATE` permission).
+4. **Test Route Guards:**
+   - As **User B**, try manually typing `/billing` or `/reports` into your URL bar.
+   - You will be gracefully redirected to the "403 - Not Authorized" page.
