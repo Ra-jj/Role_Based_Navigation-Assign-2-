@@ -2,7 +2,11 @@
 
 🔗 **[Live Demo](https://role-based-navigation-monodip.vercel.app/)**
 
-![Demo](public/demo.png)
+<div align="center" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+  <img src="public/demo.png" alt="Desktop Dashboard" width="45%">
+  <img src="public/demo-mobile.png" alt="Mobile Drawer" width="20%">
+  <img src="public/demo-403.png" alt="403 Route Guard" width="30%">
+</div>
 
 This project is a frontend assignment demonstrating a **dynamic, permission-driven UI**. It showcases how to securely and reactively manage user access at both the route level (hiding entire pages/sidebar items) and the action level (hiding specific buttons like "Create" or "Delete").
 
@@ -28,6 +32,7 @@ The application features a modern B2B dashboard aesthetic. It uses a centralized
 - **Mock Data:** Permissions are defined in `src/data/mockUsers.js` to simulate an API response.
 - **UI-Only Actions:** Action buttons (Create, Delete) demonstrate permission-based visibility only; they do not perform real create/delete operations, as this assignment's scope is authorization logic rather than full CRUD functionality.
 - **Client-Side Only:** This project demonstrates client-side UI restrictions. In a real-world application, client-side authorization must *always* be backed by server-side validation (e.g., checking tokens/permissions on API endpoints), as client code can be bypassed.
+- **Consistent Unauthorized Handling:** If a user switches profiles while on a page the new profile can't access (e.g., viewing Reports as User A, then switching to User B), the app shows the same 403 page used for direct URL navigation, rather than silently auto-redirecting. This keeps unauthorized-access handling consistent everywhere in the app.
 - **Permissions Shape:** We assume actions are represented as an array of strings like `["VIEW", "CREATE", "DELETE"]`.
 
 ## How to Run Locally
