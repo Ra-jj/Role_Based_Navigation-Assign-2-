@@ -15,7 +15,7 @@ The application features a modern B2B dashboard aesthetic. It uses a centralized
 - **Graceful Empty State:** A user with zero module permissions (User C) sees a friendly "No modules available" message instead of a broken UI.
 - **Route Guards (`ProtectedRoute`):** Prevents unauthorized direct URL navigation by checking the current user's permissions and redirecting to a 403 page if necessary.
 - **Action-Level Checks:** Renders buttons (e.g., "Create Order", "Delete Report") *only* if the user has the specific action permission in their module configuration.
-- **Responsive Design:** The layout includes a collapsible off-canvas sidebar for mobile screens.
+- **Responsive Design:** Features a collapsible off-canvas sidebar, horizontally scrollable data tables, and adaptive headers with mobile-optimized tap targets, ensuring a premium feel on any device.
 - **Mock User Switcher:** Easily toggle between different user profiles to test authorization logic in real-time.
 
 ## Tech Stack
