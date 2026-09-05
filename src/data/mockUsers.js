@@ -12,5 +12,9 @@ export const mockUsers = {
     modules: [
       { name: "Orders", permission: ["VIEW"] }
     ]
+  },
+  userC: {
+    name: "User C",
+    modules: [] // Demonstrates the empty state edge case
   }
 };

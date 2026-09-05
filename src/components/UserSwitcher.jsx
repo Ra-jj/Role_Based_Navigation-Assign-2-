@@ -18,6 +18,7 @@ const UserSwitcher = () => {
       >
         <option value="userA">User A (Admin)</option>
         <option value="userB">User B (Restricted)</option>
+        <option value="userC">User C (No Access)</option>
       </select>
     </div>
   );
