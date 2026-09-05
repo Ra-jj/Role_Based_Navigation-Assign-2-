@@ -21,13 +21,13 @@ const ReportsPage = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Placeholder Report Card */}
-        <div className="p-4 border border-gray-200 rounded-lg flex justify-between items-center bg-gray-50">
+        <div className="p-4 border border-gray-200 rounded-lg flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4 sm:gap-0 bg-gray-50">
           <div>
             <h3 className="font-semibold text-gray-800">Q3 Financial Summary</h3>
             <p className="text-xs text-gray-500 mt-1">Generated: Oct 1, 2026</p>
           </div>
           {hasPermission('Reports', 'DELETE') && (
-            <button className="px-3 py-1.5 text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 font-medium rounded-md text-sm transition-colors">
+            <button className="px-3 py-1.5 text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 font-medium rounded-md text-sm transition-colors w-full sm:w-auto">
               Delete
             </button>
           )}

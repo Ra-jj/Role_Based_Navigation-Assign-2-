@@ -15,31 +15,35 @@ const OrdersPage = () => {
         )}
       </div>
       
-      <div className="overflow-hidden border border-gray-200 rounded-lg">
-        <table className="min-w-full divide-y divide-gray-200 text-sm text-left">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-4 py-3 font-medium text-gray-700">Order ID</th>
-              <th className="px-4 py-3 font-medium text-gray-700">Customer</th>
-              <th className="px-4 py-3 font-medium text-gray-700">Status</th>
-              <th className="px-4 py-3 font-medium text-gray-700">Total</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200 bg-white">
-            <tr>
-              <td className="px-4 py-3 text-gray-800 font-medium">#ORD-001</td>
-              <td className="px-4 py-3 text-gray-600">Acme Corp</td>
-              <td className="px-4 py-3"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Shipped</span></td>
-              <td className="px-4 py-3 text-gray-800">$1,250.00</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-3 text-gray-800 font-medium">#ORD-002</td>
-              <td className="px-4 py-3 text-gray-600">Globex Inc</td>
-              <td className="px-4 py-3"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Pending</span></td>
-              <td className="px-4 py-3 text-gray-800">$850.00</td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="relative border border-gray-200 rounded-lg overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 text-sm text-left whitespace-nowrap">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-4 py-3 font-medium text-gray-700">Order ID</th>
+                <th className="px-4 py-3 font-medium text-gray-700">Customer</th>
+                <th className="px-4 py-3 font-medium text-gray-700">Status</th>
+                <th className="px-4 py-3 font-medium text-gray-700">Total</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200 bg-white">
+              <tr>
+                <td className="px-4 py-3 text-gray-800 font-medium">#ORD-001</td>
+                <td className="px-4 py-3 text-gray-600">Acme Corp</td>
+                <td className="px-4 py-3"><span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Shipped</span></td>
+                <td className="px-4 py-3 text-gray-800">$1,250.00</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-3 text-gray-800 font-medium">#ORD-002</td>
+                <td className="px-4 py-3 text-gray-600">Globex Inc</td>
+                <td className="px-4 py-3"><span className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Pending</span></td>
+                <td className="px-4 py-3 text-gray-800">$850.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        {/* Subtle shadow fade for horizontal scroll cue on mobile */}
+        <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden"></div>
       </div>
     </div>
   );
