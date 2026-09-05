@@ -9,7 +9,8 @@ This project is a frontend assignment demonstrating a **dynamic, permission-driv
 The application features a modern B2B dashboard aesthetic. It uses a centralized `PermissionContext` to handle authorization logic, ensuring a secure-by-default (default-deny) approach to UI rendering and routing.
 
 ### Key Features
-- **Dynamic Sidebar:** Navigation links are generated based on the user's `VIEW` permissions. Shows a friendly empty state if no modules are available.
+- **Dynamic Sidebar:** Navigation links are generated based on the user's `VIEW` permissions. 
+- **Graceful Empty State:** A user with zero module permissions (User C) sees a friendly "No modules available" message instead of a broken UI.
 - **Route Guards (`ProtectedRoute`):** Prevents unauthorized direct URL navigation by checking the current user's permissions and redirecting to a 403 page if necessary.
 - **Action-Level Checks:** Renders buttons (e.g., "Create Order", "Delete Report") *only* if the user has the specific action permission in their module configuration.
 - **Responsive Design:** The layout includes a collapsible off-canvas sidebar for mobile screens.
@@ -23,6 +24,7 @@ The application features a modern B2B dashboard aesthetic. It uses a centralized
 
 ## Assumptions & Disclaimers
 - **Mock Data:** Permissions are defined in `src/data/mockUsers.js` to simulate an API response.
+- **UI-Only Actions:** Action buttons (Create, Delete) demonstrate permission-based visibility only; they do not perform real create/delete operations, as this assignment's scope is authorization logic rather than full CRUD functionality.
 - **Client-Side Only:** This project demonstrates client-side UI restrictions. In a real-world application, client-side authorization must *always* be backed by server-side validation (e.g., checking tokens/permissions on API endpoints), as client code can be bypassed.
 - **Permissions Shape:** We assume actions are represented as an array of strings like `["VIEW", "CREATE", "DELETE"]`.
 
