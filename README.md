@@ -45,7 +45,7 @@ The application features a modern B2B dashboard aesthetic. It uses a centralized
 
 ## How to Test
 
-1. **User Switcher:** Use the dropdown in the top right corner to switch between **User A** and **User B**.
+1. **User Switcher:** Use the dropdown in the top right corner to switch between **User A**, **User B**, and **User C**.
 2. **Observe the Sidebar:** 
    - **User A** has access to Orders, Billing, and Reports.
    - **User B** only has access to Orders. The other links disappear.
